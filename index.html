@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método CEC® · Dossier · Kiko Martínez</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2a2118;
+    --ink-soft:#5b4f41;
+    --gold:#b08d4f;
+    --gold-deep:#9a7838;
+    --gold-light:#cdb079;
+    --cream:#faf6ef;
+    --cream-2:#f3ece0;
+    --line:#e3d8c6;
+    --white-warm:#fffdf9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body{
+    font-family:'Jost', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.78;
+    font-weight:300;
+    font-size:16px;
+  }
+  .page{
+    max-width:820px; margin:0 auto;
+    background:var(--white-warm);
+    box-shadow:0 30px 80px rgba(60,45,25,0.10);
+  }
+  h1,h2,h3,.serif{ font-family:'Cormorant Garamond', serif; }
+  .eyebrow{
+    font-family:'Jost',sans-serif; font-weight:500; font-size:11px;
+    letter-spacing:0.32em; text-transform:uppercase; color:var(--gold-deep);
+  }
+
+  /* PORTADA */
+  .cover{
+    position:relative; padding:92px 70px 70px;
+    background:
+      radial-gradient(circle at 78% 12%, rgba(176,141,79,0.10), transparent 45%),
+      radial-gradient(circle at 12% 88%, rgba(176,141,79,0.08), transparent 40%),
+      linear-gradient(180deg,#fffdf9 0%, #f7f0e4 100%);
+    border-bottom:1px solid var(--line); overflow:hidden;
+  }
+  .cover::after{
+    content:""; position:absolute; left:70px; right:70px; bottom:46px;
+    height:1px; background:linear-gradient(90deg,transparent,var(--gold-light),transparent);
+  }
+  .monogram{
+    width:74px;height:74px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 35% 30%, #e9d4a4, var(--gold) 70%, var(--gold-deep));
+    box-shadow:0 8px 22px rgba(154,120,56,0.35), inset 0 1px 2px rgba(255,255,255,0.6);
+    margin-bottom:34px;
+  }
+  .monogram span{ font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:#fff;text-shadow:0 1px 2px rgba(120,90,40,0.5);line-height:1; }
+  .cover .eyebrow{ margin-bottom:22px; display:block; }
+  .cover h1{ font-size:64px;font-weight:600;line-height:1.02;letter-spacing:-0.5px;color:var(--ink);margin-bottom:8px; }
+  .cover h1 .reg{ font-size:26px;vertical-align:super;color:var(--gold-deep);font-weight:500; }
+  .cover .subtitle{ font-family:'Cormorant Garamond',serif;font-style:italic;font-size:27px;color:var(--gold-deep);font-weight:500;margin-bottom:40px; }
+  .cover .lede{ font-size:17px;color:var(--ink-soft);max-width:570px;font-weight:300; }
+  .cover .byline{ margin-top:48px;padding-top:26px;font-size:13px;letter-spacing:0.06em;color:var(--ink-soft); }
+  .cover .byline strong{ color:var(--ink);font-weight:500; }
+
+  /* SECCIONES */
+  .body{ padding:64px 70px; }
+  section{ margin-bottom:58px; }
+  section:last-child{ margin-bottom:0; }
+  .sec-head{ margin-bottom:24px; }
+  .sec-head .eyebrow{ display:block;margin-bottom:10px; }
+  .sec-head h2{ font-size:34px;font-weight:600;color:var(--ink);line-height:1.12;letter-spacing:-0.3px; }
+  .sec-head .lead{ margin-top:14px;font-size:16.5px;color:var(--ink-soft); }
+  p{ margin-bottom:16px;color:var(--ink-soft); }
+  p strong{ color:var(--ink);font-weight:500; }
+  em{ color:var(--gold-deep);font-style:italic; }
+
+  .ornament{ display:flex;align-items:center;gap:14px;margin:0 0 40px; }
+  .ornament .l{ flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line)); }
+  .ornament .r{ flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent); }
+  .ornament .dot{ width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(176,141,79,0.12); }
+
+  .quote{ background:linear-gradient(135deg,#f7f0e3,#f1e8d8);border-left:3px solid var(--gold);padding:34px 38px;border-radius:4px; }
+  .quote p{ font-family:'Cormorant Garamond',serif;font-style:italic;font-size:23px;line-height:1.5;color:var(--ink);margin:0; }
+
+  /* tres pilares CEC */
+  .triad{ display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px; }
+  .triad .t{
+    text-align:center;padding:30px 16px;background:var(--cream);
+    border:1px solid var(--line);border-radius:8px;
+  }
+  .triad .t .word{ font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;color:var(--gold-deep);margin-bottom:8px; }
+  .triad .t .desc{ font-size:13.5px;color:var(--ink-soft);line-height:1.55; }
+
+  /* diferenciadores (qué lo hace distinto) */
+  .feats{ margin-top:20px; }
+  .feat{
+    display:flex;gap:20px;padding:24px 0;border-bottom:1px solid var(--line);
+  }
+  .feat:last-child{ border-bottom:none; }
+  .feat .ic{
+    flex-shrink:0;width:46px;height:46px;border-radius:50%;
+    background:linear-gradient(135deg,#efdcb0,var(--gold));
+    display:flex;align-items:center;justify-content:center;font-size:20px;
+    box-shadow:0 5px 14px rgba(154,120,56,0.22);
+  }
+  .feat .m h3{ font-size:21px;font-weight:600;color:var(--ink);margin-bottom:4px; }
+  .feat .m p{ margin:0;font-size:15px; }
+
+  /* proceso / recorrido */
+  .journey{ display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px; }
+  .jcard{ background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:24px 24px; }
+  .jcard .k{ font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:500;margin-bottom:8px; }
+  .jcard h3{ font-size:20px;font-weight:600;color:var(--ink);margin-bottom:8px; }
+  .jcard p{ margin:0;font-size:14.5px; }
+
+  /* bloque oscuro destacado */
+  .feature{
+    background:linear-gradient(135deg,#2a2118,#3a2e1e);color:#f3ead8;
+    border-radius:12px;padding:44px 46px;position:relative;overflow:hidden;
+  }
+  .feature::before{ content:"";position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(176,141,79,0.30),transparent 70%); }
+  .feature .eyebrow{ color:var(--gold-light);position:relative; }
+  .feature h2{ color:#fff;font-size:32px;margin:10px 0 16px;position:relative; }
+  .feature p{ color:#e6dcc8;position:relative;margin-bottom:16px; }
+  .feature p:last-child{ margin-bottom:0; }
+
+  /* lo que recibes */
+  .includes{ margin-top:20px; }
+  .inc-row{ display:flex;align-items:flex-start;gap:14px;padding:13px 0;border-bottom:1px solid var(--line); }
+  .inc-row:last-child{ border-bottom:none; }
+  .inc-row .mark{ flex-shrink:0;margin-top:3px;width:20px;height:20px;border-radius:50%;background:rgba(176,141,79,0.15);color:var(--gold-deep);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600; }
+  .inc-row .txt{ font-size:15px;color:var(--ink-soft); }
+  .inc-row .txt b{ color:var(--ink);font-weight:500; }
+
+  /* valor */
+  .value-grid{ display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px; }
+  .vcard{ border:1px solid var(--line);border-radius:8px;padding:24px;background:var(--cream); }
+  .vcard h3{ font-family:'Jost',sans-serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:10px; }
+  .vcard p{ font-size:14.5px;margin:0; }
+
+  /* precio */
+  .price-block{
+    margin-top:42px;text-align:center;padding:50px 40px;
+    background:radial-gradient(circle at 50% 0%, rgba(176,141,79,0.10), transparent 60%),var(--white-warm);
+    border:1px solid var(--gold-light);border-radius:14px;
+  }
+  .price-block .eyebrow{ display:block;margin-bottom:18px; }
+  .price-block .amount{ font-family:'Cormorant Garamond',serif;font-size:84px;font-weight:600;color:var(--ink);line-height:1; }
+  .price-block .amount .cur{ color:var(--gold-deep);font-size:48px;vertical-align:super; }
+  .price-block .note{ margin-top:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--ink-soft); }
+  .price-block .sub{ margin-top:10px;font-size:13px;color:var(--ink-soft);letter-spacing:0.04em; }
+
+  /* cierre */
+  .closing{ margin-top:60px;padding-top:44px;border-top:1px solid var(--line);text-align:center; }
+  .closing .mark-line{ font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:var(--ink);line-height:1.45;max-width:580px;margin:0 auto 30px; }
+  .sig{ font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold-deep);font-weight:600;margin-bottom:4px; }
+  .sig-role{ font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft); }
+  .motto{ margin-top:22px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--gold-deep); }
+
+  .footer{ background:#2a2118;color:#cdbfa8;padding:30px 70px;display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:0.05em; }
+  .footer .reg{ font-size:11px;opacity:0.7; }
+
+  @media print{
+    body{ background:#fff; }
+    .page{ box-shadow:none;max-width:100%; }
+    .feature{ -webkit-print-color-adjust:exact;print-color-adjust:exact; }
+    section,.price-block,.feature{ page-break-inside:avoid; }
+    .cover{ page-break-after:always; }
+  }
+  @media (max-width:680px){
+    .cover{ padding:60px 32px 50px; }
+    .cover h1{ font-size:46px; }
+    .body{ padding:48px 32px; }
+    .triad{ grid-template-columns:1fr; }
+    .journey,.value-grid{ grid-template-columns:1fr; }
+    .footer{ padding:24px 32px;flex-direction:column;gap:10px;text-align:center; }
+    .price-block .amount{ font-size:64px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- PORTADA -->
+  <header class="cover">
+    <div class="monogram"><span>K</span></div>
+    <span class="eyebrow">El programa terapéutico integrativo</span>
+    <h1>Método CEC<span class="reg">®</span></h1>
+    <p class="subtitle">Cuerpo · Emoción · Consciencia</p>
+    <p class="lede">No es un curso. No es un PDF. Es un proceso terapéutico completo, diseñado a tu medida, para reencontrar la calma, volver a habitar tu cuerpo y recuperar las riendas de tu propia vida. Un acompañamiento que se queda contigo para siempre.</p>
+    <div class="byline">Creado y acompañado por <strong>Kiko Martínez</strong> · Terapeuta Integrativo · Sevilla</div>
+  </header>
+
+  <div class="body">
+
+    <!-- IDENTIFICACIÓN EMOCIONAL -->
+    <section>
+      <div class="sec-head">
+        <span class="eyebrow">Antes de nada, esto</span>
+        <h2>Quizá te suene de algo</h2>
+      </div>
+      <p>Hay personas que no están cansadas de dormir poco. Están cansadas de <strong>sostener demasiado, durante demasiado tiempo</strong>.</p>
+      <p>Que tienen una vida que, vista desde fuera, funciona. El trabajo, la familia, las responsabilidades, todo en su sitio. Y aun así, por dentro, algo no encaja. Una tensión que no se va. Una mente que no para. La sensación de estar viviendo en piloto automático, de sobrevivir más que de vivir.</p>
+      <p>Si te reconoces aquí, quiero decirte tres cosas, despacio:</p>
+      <p>No estás roto. No eres débil. Y tu cuerpo no está luchando contra ti. <em>A veces el cuerpo habla cuando la mente ya no puede más</em> —y lo que tú llamas “estar mal” es muchas veces un cuerpo que lleva años pidiendo, en su idioma, que por fin le hagas caso.</p>
+      <p>Quizá no necesitas ser más fuerte. Quizá necesitas, simplemente, <strong>sentirte más seguro</strong>. Y eso —aunque ahora no lo parezca— se puede aprender. Se puede acompañar. Hay una forma de salir de este estado, y no pasa por exigirte más.</p>
+    </section>
+
+    <div class="ornament"><span class="l"></span><span class="dot"></span><span class="r"></span></div>
+
+    <!-- APERTURA -->
+    <section>
+      <div class="quote">
+        <p>“No trato síntomas sueltos. Acompaño a personas enteras. Porque el cuerpo, la emoción y la consciencia no se curan por separado.”</p>
+      </div>
+      <p style="margin-top:30px;">El Método CEC® es la integración madura de todo lo que he aprendido en años de práctica clínica acompañando a cientos de personas. No reúne técnicas sueltas: las teje en un único proceso coherente, donde cada pieza sostiene a la siguiente y todo trabaja en la misma dirección —la tuya.</p>
+      <p>Está pensado para quien tiene una vida que funciona por fuera pero siente que algo no encaja por dentro. Para quien arrastra una tensión que no se va, un cansancio que el descanso no cura, una mente que no para. Para quien intuye que su cuerpo le está hablando y quiere, por fin, aprender a escucharlo —con un guía al lado, no solo.</p>
+    </section>
+
+    <div class="ornament"><span class="l"></span><span class="dot"></span><span class="r"></span></div>
+
+    <!-- LOS TRES PILARES -->
+    <section>
+      <div class="sec-head">
+        <span class="eyebrow">El alma del método</span>
+        <h2>Tres dimensiones, una sola persona</h2>
+        <p class="lead">El nombre lo dice todo. Tres territorios que la mayoría de enfoques trata por separado, y que aquí se acompañan a la vez.</p>
+      </div>
+      <div class="triad">
+        <div class="t"><div class="word">Cuerpo</div><div class="desc">Donde se guarda lo que no se dijo. El punto de partida de toda regulación real.</div></div>
+        <div class="t"><div class="word">Emoción</div><div class="desc">Lo que el cuerpo expresa cuando la mente ya no encuentra las palabras.</div></div>
+        <div class="t"><div class="word">Consciencia</div><div class="desc">El lugar desde el que, por fin, eliges. La meta de todo el proceso.</div></div>
+      </div>
+    </section>
+
+    <div class="ornament"><span class="l"></span><span class="dot"></span><span class="r"></span></div>
+
+    <!-- QUÉ LO HACE DISTINTO -->
+    <section>
+      <div class="sec-head">
+        <span class="eyebrow">Por qué no se parece a nada que hayas probado</span>
+        <h2>Hecho para ti, no para todos</h2>
+      </div>
+      <div class="feats">
+        <div class="feat">
+          <div class="ic">🧭</div>
+          <div class="m">
+            <h3>Empieza conociéndote de verdad</h3>
+            <p>Antes de proponerte nada, el método observa con precisión tu punto de partida real a través de una evaluación propia que mide en qué dirección se está regulando tu organismo. Sabe de dónde partes para saber adónde llevarte. Nada genérico, nada improvisado.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="ic">🫀</div>
+          <div class="m">
+            <h3>Identifica tu forma de regularte</h3>
+            <p>No todos nos desbordamos igual. Hay quien vive en alerta permanente y quien se apaga y desconecta. El método reconoce tu patrón particular y ajusta cada práctica a él. Lo que a una persona la calma, a otra la activa: aquí eso se tiene en cuenta.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="ic">🤲</div>
+          <div class="m">
+            <h3>Integra el cuerpo y la palabra</h3>
+            <p>Trabajo somático, respiración, movimiento consciente y herramientas de acompañamiento emocional y coaching, tejidas en un mismo recorrido. El cuerpo abre el camino; la palabra lo acompaña. Nunca lo uno sin lo otro.</p>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="ic">🌱</div>
+          <div class="m">
+            <h3>Cuida cada detalle con seguridad</h3>
+            <p>Cada práctica está pensada para tu situación concreta —tus condiciones, tu momento vital, tu cuerpo—. Nada se prescribe a la ligera. La prudencia y el cuidado son parte del método, no un añadido.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ornament"><span class="l"></span><span class="dot"></span><span class="r"></span></div>
+
+    <!-- EL RECORRIDO -->
+    <section>
+      <div class="sec-head">
+        <span class="eyebrow">Cómo se vive el proceso</span>
+        <h2>Un camino que respeta tus tiempos</h2>
+        <p class="lead">El cambio profundo no se fuerza. Se acompaña, paso a paso, sin desbordar al sistema.</p>
+      </div>
+      <div class="journey">
+        <div class="jcard">
+          <div class="k">Primero</div>
+          <h3>Sentirse a salvo</h3>
+          <p>Antes de transformar nada, el cuerpo necesita seguridad. Se trabaja la calma de base, para que el sistema nervioso vuelva a sentir que puede bajar la guardia.</p>
+        </div>
+        <div class="jcard">
+          <div class="k">Después</div>
+          <h3>Integrar herramientas</h3>
+          <p>Con la base asentada, se incorporan recursos activos —del cuerpo, de la emoción y de la mente— que ya puedes usar por ti mismo en tu día a día.</p>
+        </div>
+        <div class="jcard">
+          <div class="k">Finalmente</div>
+          <h3>Volver a elegir</h3>
+          <p>El proceso consolida lo aprendido y mira hacia delante: reordenar lo que quieres, desde una consciencia nueva. No un final, sino un punto de partida que ya sostienes tú.</p>
+        </div>
+        <div class="jcard">
+          <div class="k">Siempre</div>
+          <h3>Lo que se queda</h3>
+          <p>Cuando el programa termina, las herramientas no se van contigo a medias: se quedan. La respiración, el movimiento, la forma de mirarte. Para toda la vida.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="ornament"><span class="l"></span><span class="dot"></span><span class="r"></span></div>
+
+    <!-- MÍNIMOS / ADHERENCIA (bloque oscuro) -->
+    <section>
+      <div class="feature">
+        <span class="eyebrow">El secreto de que funcione de verdad</span>
+        <h2>Pensado para que no abandones</h2>
+        <p>El mayor enemigo de cualquier cambio no es la falta de información: es el miedo a no ser constante, esa sensación de “empiezo y lo dejo” que tantas veces nos ha frenado.</p>
+        <p>Por eso el Método CEC® no te pide heroicidades. Te acompaña con gestos pequeños, diarios, tan asumibles que es casi imposible fallar. Y celebra cada paso que das, por mínimo que parezca, porque sabe que el camino se hace caminando, no corriendo. No necesitas fuerza de voluntad de hierro. Solo necesitas empezar, y dejarte acompañar.</p>
+      </div>
+    </section>
+
+    <div class="ornament"><span class="l"></span><span class="dot"></span><span class="r"></span></div>
+
+    <!-- LO QUE RECIBES -->
+    <section>
+      <div class="sec-head">
+        <span class="eyebrow">Lo que llevas contigo</span>
+        <h2>Todo lo que incluye</h2>
+      </div>
+      <div class="includes">
+        <div class="inc-row"><span class="mark">✓</span><span class="txt"><b>Una evaluación personalizada de tu punto de partida</b> en las distintas dimensiones de tu bienestar.</span></div>
+        <div class="inc-row"><span class="mark">✓</span><span class="txt"><b>El reconocimiento de tu forma única de regularte</b>, que ajusta todo el programa a ti.</span></div>
+        <div class="inc-row"><span class="mark">✓</span><span class="txt"><b>Un programa completo y estructurado por fases</b>, diseñado para acompañarte sin abrumarte.</span></div>
+        <div class="inc-row"><span class="mark">✓</span><span class="txt"><b>Prácticas de cuerpo, respiración y movimiento</b> adaptadas a tu situación y a lo que tu cuerpo necesita.</span></div>
+        <div class="inc-row"><span class="mark">✓</span><span class="txt"><b>Herramientas emocionales y de coaching</b> para soltar lo que pesa y reordenar lo que importa.</span></div>
+        <div class="inc-row"><span class="mark">✓</span><span class="txt"><b>Orientación de hábitos, descanso y cuidado natural</b>, pensada con prudencia para tu caso.</span></div>
+        <div class="inc-row"><span class="mark">✓</span><span class="txt"><b>Un entorno digital propio y privado</b>, con tu diario y tu progreso, guardados solo para ti.</span></div>
+        <div class="inc-row"><span class="mark">✓</span><span class="txt"><b>Herramientas para toda la vida</b> que seguirás usando mucho después de terminar.</span></div>
+      </div>
+    </section>
+
+    <div class="ornament"><span class="l"></span><span class="dot"></span><span class="r"></span></div>
+
+    <!-- VALOR + PRECIO -->
+    <section>
+      <div class="sec-head">
+        <span class="eyebrow">Por qué su valor va mucho más allá de su precio</span>
+        <h2>Lo que de verdad estás recibiendo</h2>
+      </div>
+      <div class="value-grid">
+        <div class="vcard"><h3>Años de práctica, en tus manos</h3><p>No compras un documento. Recibes la destilación de años de experiencia clínica acompañando a personas reales, puesta al servicio de tu proceso concreto.</p></div>
+        <div class="vcard"><h3>Diseñado solo para ti</h3><p>No es una plantilla. Cada pieza se ajusta a tu cuerpo, tu momento y tu forma de regularte. Una personalización que, hecha así, no tiene comparación.</p></div>
+        <div class="vcard"><h3>Un proceso, no una sesión</h3><p>No es ayuda puntual que se agota. Es un acompañamiento completo y por fases que te sostiene durante todo el camino, paso a paso.</p></div>
+        <div class="vcard"><h3>Para el resto de tu vida</h3><p>Lo que aprendes aquí no caduca. La calma, el conocimiento de tu propio cuerpo, las herramientas: te acompañarán siempre. Es una inversión que no se gasta.</p></div>
+      </div>
+
+      <div class="price-block">
+        <span class="eyebrow">El Método CEC® completo</span>
+        <div class="amount"><span class="cur">€</span>150</div>
+        <p class="note">Un proceso terapéutico completo, personalizado y para toda la vida.</p>
+        <p class="sub">Por todo lo que incluye y todo lo que se queda contigo, su precio es, sencillamente, un regalo.</p>
+      </div>
+    </section>
+
+    <!-- CIERRE -->
+    <div class="closing">
+      <p class="mark-line">“Cuidarte no es un gasto. Es la decisión más honesta que puedes tomar contigo mismo.”</p>
+      <div class="sig">Kiko Martínez</div>
+      <div class="sig-role">Terapeuta Integrativo · Creador del Método CEC® · Sevilla</div>
+      <p class="motto">Tu bienestar, mi máxima prioridad.</p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <span>Método CEC® · Cuerpo · Emoción · Consciencia</span>
+    <span class="reg">kikomartinezquiro-max.github.io</span>
+  </div>
+
+</div>
+</body>
+</html>
